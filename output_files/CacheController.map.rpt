@@ -1,6 +1,6 @@
 Analysis & Synthesis report for CacheController
-Sun Mar 20 01:53:44 2016
-Quartus II 64-Bit Version 14.0.2 Build 209 09/17/2014 SJ Full Version
+Sun Mar 20 17:21:08 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
 ---------------------
@@ -14,10 +14,10 @@ Quartus II 64-Bit Version 14.0.2 Build 209 09/17/2014 SJ Full Version
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |CacheController|state
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Post-Synthesis Netlist Statistics for Top Partition
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Elapsed Time Per Partition
  14. Analysis & Synthesis Messages
 
@@ -26,41 +26,40 @@ Quartus II 64-Bit Version 14.0.2 Build 209 09/17/2014 SJ Full Version
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus II License Agreement,
-the Altera MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 20 01:53:44 2016       ;
-; Quartus II 64-Bit Version          ; 14.0.2 Build 209 09/17/2014 SJ Full Version ;
-; Revision Name                      ; CacheController                             ;
-; Top-level Entity Name              ; CacheController                             ;
-; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,055                                       ;
-;     Total combinational functions  ; 441                                         ;
-;     Dedicated logic registers      ; 643                                         ;
-; Total registers                    ; 643                                         ;
-; Total pins                         ; 192                                         ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-+------------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Mar 20 17:21:08 2016            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; CacheController                                  ;
+; Top-level Entity Name              ; CacheController                                  ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; 3,190                                            ;
+;     Total combinational functions  ; 3,026                                            ;
+;     Dedicated logic registers      ; 718                                              ;
+; Total registers                    ; 718                                              ;
+; Total pins                         ; 198                                              ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -184,28 +183,28 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,055       ;
+; Estimated Total logic elements              ; 3,190       ;
 ;                                             ;             ;
-; Total combinational functions               ; 441         ;
+; Total combinational functions               ; 3026        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 409         ;
-;     -- 3 input functions                    ; 22          ;
-;     -- <=2 input functions                  ; 10          ;
+;     -- 4 input functions                    ; 1398        ;
+;     -- 3 input functions                    ; 591         ;
+;     -- <=2 input functions                  ; 1037        ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 441         ;
+;     -- normal mode                          ; 3026        ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
-; Total registers                             ; 643         ;
-;     -- Dedicated logic registers            ; 643         ;
+; Total registers                             ; 718         ;
+;     -- Dedicated logic registers            ; 718         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 192         ;
+; I/O pins                                    ; 198         ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
-; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 643         ;
-; Total fan-out                               ; 4490        ;
-; Average fan-out                             ; 3.06        ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 1105        ;
+; Total fan-out                               ; 12452       ;
+; Average fan-out                             ; 3.01        ;
 +---------------------------------------------+-------------+
 
 
@@ -214,43 +213,58 @@ agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
-; |CacheController           ; 441 (18)          ; 643 (58)     ; 0           ; 0            ; 0       ; 0         ; 192  ; 0            ; |CacheController                  ; work         ;
-;    |DataMemory:unit2|      ; 375 (375)         ; 528 (528)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CacheController|DataMemory:unit2 ; work         ;
-;    |TagMemory:unit1|       ; 48 (48)           ; 57 (57)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CacheController|TagMemory:unit1  ; work         ;
+; |CacheController           ; 3026 (37)         ; 718 (132)    ; 0           ; 0            ; 0       ; 0         ; 198  ; 0            ; |CacheController                  ; work         ;
+;    |DataMemory:unit2|      ; 2942 (2942)       ; 528 (528)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CacheController|DataMemory:unit2 ; work         ;
+;    |TagMemory:unit1|       ; 47 (47)           ; 58 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CacheController|TagMemory:unit1  ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |CacheController|state                                                                                   ;
-+-----------+----------+----------+-----------+----------+----------+----------+----------+----------+----------+----------+
-; Name      ; state.s8 ; state.s7 ; state.s6b ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1 ; state.s0 ;
-+-----------+----------+----------+-----------+----------+----------+----------+----------+----------+----------+----------+
-; state.s0  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
-; state.s1  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
-; state.s2  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
-; state.s3  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
-; state.s4  ; 0        ; 0        ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
-; state.s5  ; 0        ; 0        ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; state.s6  ; 0        ; 0        ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; state.s6b ; 0        ; 0        ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; state.s7  ; 0        ; 1        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-; state.s8  ; 1        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
-+-----------+----------+----------+-----------+----------+----------+----------+----------+----------+----------+----------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |CacheController|state                                                                                                                                                          ;
++--------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+--------------+-------------+--------------+
+; Name         ; state.s8 ; state.s7 ; state.s6b ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1c ; state.s1b ; state.s1 ; state.s0 ; state.Sdelay ; state.sIdle ; state.sReset ;
++--------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+--------------+-------------+--------------+
+; state.sReset ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 0            ;
+; state.sIdle  ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 1           ; 1            ;
+; state.Sdelay ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 1            ; 0           ; 1            ;
+; state.s0     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 1        ; 0            ; 0           ; 1            ;
+; state.s1     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 1        ; 0        ; 0            ; 0           ; 1            ;
+; state.s1b    ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 1         ; 0        ; 0        ; 0            ; 0           ; 1            ;
+; state.s1c    ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
+; state.s2     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
+; state.s3     ; 0        ; 0        ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
+; state.s4     ; 0        ; 0        ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
+; state.s5     ; 0        ; 0        ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
+; state.s6     ; 0        ; 0        ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
+; state.s6b    ; 0        ; 0        ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
+; state.s7     ; 0        ; 1        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
+; state.s8     ; 1        ; 0        ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0         ; 0         ; 0        ; 0        ; 0            ; 0           ; 1            ;
++--------------+----------+----------+-----------+----------+----------+----------+----------+----------+-----------+-----------+----------+----------+--------------+-------------+--------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; tag_enable                             ; Stuck at VCC due to stuck port data_in ;
-; write_block                            ; Stuck at GND due to stuck port data_in ;
-; data_block[0..63]                      ; Lost fanout                            ;
-; state.s8                               ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 67 ;                                        ;
-+----------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; DataMemory:unit2|blockReplaced                     ; reset               ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; tag_enable                            ; Stuck at VCC due to stuck port data_in ;
+; state.sIdle                           ; Merged with state.Sdelay               ;
+; state.Sdelay                          ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 3 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -258,12 +272,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 643   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 718   ;
+; Number of registers using Synchronous Clear  ; 3     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 581   ;
+; Number of registers using Asynchronous Clear ; 585   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 629   ;
+; Number of registers using Clock Enable       ; 703   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -273,34 +287,12 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; Yes        ; |CacheController|DataMemory:unit2|data_out[8] ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; Yes        ; |CacheController|DataMemory:unit2|data_out[2] ;
 ; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |CacheController|TagMemory:unit1|Mux0         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CacheController|state                        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |CacheController|Selector7                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |CacheController|state                        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |CacheController|state                        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |CacheController|state                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 192                         ;
-; cycloneiii_ff         ; 643                         ;
-;     CLR               ; 13                          ;
-;     ENA               ; 61                          ;
-;     ENA CLR           ; 568                         ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 443                         ;
-;     normal            ; 443                         ;
-;         0 data inputs ; 2                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 22                          ;
-;         4 data inputs ; 409                         ;
-;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.82                        ;
-+-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -308,7 +300,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -317,8 +309,8 @@ Encoding Type:  One-Hot
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 14.0.2 Build 209 09/17/2014 SJ Full Version
-    Info: Processing started: Sun Mar 20 01:53:40 2016
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Sun Mar 20 17:21:01 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CacheController -c CacheController
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tagmemory.vhd
@@ -339,79 +331,527 @@ Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:unit2"
 Warning (10631): VHDL Process Statement warning at DataMemory.vhd(38): inferring latch(es) for signal or variable "blockReplaced", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "blockReplaced" at DataMemory.vhd(38)
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "memory" into its bus
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "TagMemory:unit1|hit" to the node "Selector19" into an OR gate
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][0]~_emulated" and latch "DataMemory:unit2|memory[2][2][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][0]~_emulated" and latch "DataMemory:unit2|memory[2][1][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][0]~_emulated" and latch "DataMemory:unit2|memory[2][0][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][0]~_emulated" and latch "DataMemory:unit2|memory[2][3][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][0]~_emulated" and latch "DataMemory:unit2|memory[1][1][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][0]~_emulated" and latch "DataMemory:unit2|memory[1][2][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][0]~_emulated" and latch "DataMemory:unit2|memory[1][0][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][0]~_emulated" and latch "DataMemory:unit2|memory[1][3][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][0]~_emulated" and latch "DataMemory:unit2|memory[0][2][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][0]~_emulated" and latch "DataMemory:unit2|memory[0][1][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][0]~_emulated" and latch "DataMemory:unit2|memory[0][0][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][0]~_emulated" and latch "DataMemory:unit2|memory[0][3][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][0]~_emulated" and latch "DataMemory:unit2|memory[3][1][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][0]~_emulated" and latch "DataMemory:unit2|memory[3][2][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][0]~_emulated" and latch "DataMemory:unit2|memory[3][0][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][0]~_emulated" and latch "DataMemory:unit2|memory[3][3][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][0]~_emulated" and latch "DataMemory:unit2|memory[5][1][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][0]~_emulated" and latch "DataMemory:unit2|memory[5][2][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][0]~_emulated" and latch "DataMemory:unit2|memory[5][0][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][0]~_emulated" and latch "DataMemory:unit2|memory[5][3][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][0]~_emulated" and latch "DataMemory:unit2|memory[6][2][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][0]~_emulated" and latch "DataMemory:unit2|memory[6][1][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][0]~_emulated" and latch "DataMemory:unit2|memory[6][0][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][0]~_emulated" and latch "DataMemory:unit2|memory[6][3][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][0]~_emulated" and latch "DataMemory:unit2|memory[4][2][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][0]~_emulated" and latch "DataMemory:unit2|memory[4][1][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][0]~_emulated" and latch "DataMemory:unit2|memory[4][0][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][0]~_emulated" and latch "DataMemory:unit2|memory[4][3][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][0]~_emulated" and latch "DataMemory:unit2|memory[7][1][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][0]~_emulated" and latch "DataMemory:unit2|memory[7][2][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][0]~_emulated" and latch "DataMemory:unit2|memory[7][0][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][0]~_emulated" and latch "DataMemory:unit2|memory[7][3][0]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][1]~_emulated" and latch "DataMemory:unit2|memory[2][2][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][1]~_emulated" and latch "DataMemory:unit2|memory[2][1][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][1]~_emulated" and latch "DataMemory:unit2|memory[2][0][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][1]~_emulated" and latch "DataMemory:unit2|memory[2][3][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][1]~_emulated" and latch "DataMemory:unit2|memory[1][1][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][1]~_emulated" and latch "DataMemory:unit2|memory[1][2][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][1]~_emulated" and latch "DataMemory:unit2|memory[1][0][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][1]~_emulated" and latch "DataMemory:unit2|memory[1][3][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][1]~_emulated" and latch "DataMemory:unit2|memory[0][2][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][1]~_emulated" and latch "DataMemory:unit2|memory[0][1][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][1]~_emulated" and latch "DataMemory:unit2|memory[0][0][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][1]~_emulated" and latch "DataMemory:unit2|memory[0][3][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][1]~_emulated" and latch "DataMemory:unit2|memory[3][1][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][1]~_emulated" and latch "DataMemory:unit2|memory[3][2][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][1]~_emulated" and latch "DataMemory:unit2|memory[3][0][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][1]~_emulated" and latch "DataMemory:unit2|memory[3][3][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][1]~_emulated" and latch "DataMemory:unit2|memory[5][1][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][1]~_emulated" and latch "DataMemory:unit2|memory[5][2][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][1]~_emulated" and latch "DataMemory:unit2|memory[5][0][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][1]~_emulated" and latch "DataMemory:unit2|memory[5][3][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][1]~_emulated" and latch "DataMemory:unit2|memory[6][2][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][1]~_emulated" and latch "DataMemory:unit2|memory[6][1][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][1]~_emulated" and latch "DataMemory:unit2|memory[6][0][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][1]~_emulated" and latch "DataMemory:unit2|memory[6][3][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][1]~_emulated" and latch "DataMemory:unit2|memory[4][2][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][1]~_emulated" and latch "DataMemory:unit2|memory[4][1][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][1]~_emulated" and latch "DataMemory:unit2|memory[4][0][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][1]~_emulated" and latch "DataMemory:unit2|memory[4][3][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][1]~_emulated" and latch "DataMemory:unit2|memory[7][1][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][1]~_emulated" and latch "DataMemory:unit2|memory[7][2][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][1]~_emulated" and latch "DataMemory:unit2|memory[7][0][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][1]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][1]~_emulated" and latch "DataMemory:unit2|memory[7][3][1]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][2]~_emulated" and latch "DataMemory:unit2|memory[2][2][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][2]~_emulated" and latch "DataMemory:unit2|memory[2][1][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][2]~_emulated" and latch "DataMemory:unit2|memory[2][0][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][2]~_emulated" and latch "DataMemory:unit2|memory[2][3][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][2]~_emulated" and latch "DataMemory:unit2|memory[1][1][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][2]~_emulated" and latch "DataMemory:unit2|memory[1][2][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][2]~_emulated" and latch "DataMemory:unit2|memory[1][0][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][2]~_emulated" and latch "DataMemory:unit2|memory[1][3][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][2]~_emulated" and latch "DataMemory:unit2|memory[0][2][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][2]~_emulated" and latch "DataMemory:unit2|memory[0][1][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][2]~_emulated" and latch "DataMemory:unit2|memory[0][0][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][2]~_emulated" and latch "DataMemory:unit2|memory[0][3][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][2]~_emulated" and latch "DataMemory:unit2|memory[3][1][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][2]~_emulated" and latch "DataMemory:unit2|memory[3][2][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][2]~_emulated" and latch "DataMemory:unit2|memory[3][0][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][2]~_emulated" and latch "DataMemory:unit2|memory[3][3][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][2]~_emulated" and latch "DataMemory:unit2|memory[5][1][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][2]~_emulated" and latch "DataMemory:unit2|memory[5][2][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][2]~_emulated" and latch "DataMemory:unit2|memory[5][0][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][2]~_emulated" and latch "DataMemory:unit2|memory[5][3][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][2]~_emulated" and latch "DataMemory:unit2|memory[6][2][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][2]~_emulated" and latch "DataMemory:unit2|memory[6][1][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][2]~_emulated" and latch "DataMemory:unit2|memory[6][0][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][2]~_emulated" and latch "DataMemory:unit2|memory[6][3][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][2]~_emulated" and latch "DataMemory:unit2|memory[4][2][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][2]~_emulated" and latch "DataMemory:unit2|memory[4][1][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][2]~_emulated" and latch "DataMemory:unit2|memory[4][0][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][2]~_emulated" and latch "DataMemory:unit2|memory[4][3][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][2]~_emulated" and latch "DataMemory:unit2|memory[7][1][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][2]~_emulated" and latch "DataMemory:unit2|memory[7][2][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][2]~_emulated" and latch "DataMemory:unit2|memory[7][0][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][2]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][2]~_emulated" and latch "DataMemory:unit2|memory[7][3][2]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][3]~_emulated" and latch "DataMemory:unit2|memory[2][2][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][3]~_emulated" and latch "DataMemory:unit2|memory[2][1][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][3]~_emulated" and latch "DataMemory:unit2|memory[2][0][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][3]~_emulated" and latch "DataMemory:unit2|memory[2][3][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][3]~_emulated" and latch "DataMemory:unit2|memory[1][1][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][3]~_emulated" and latch "DataMemory:unit2|memory[1][2][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][3]~_emulated" and latch "DataMemory:unit2|memory[1][0][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][3]~_emulated" and latch "DataMemory:unit2|memory[1][3][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][3]~_emulated" and latch "DataMemory:unit2|memory[0][2][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][3]~_emulated" and latch "DataMemory:unit2|memory[0][1][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][3]~_emulated" and latch "DataMemory:unit2|memory[0][0][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][3]~_emulated" and latch "DataMemory:unit2|memory[0][3][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][3]~_emulated" and latch "DataMemory:unit2|memory[3][1][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][3]~_emulated" and latch "DataMemory:unit2|memory[3][2][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][3]~_emulated" and latch "DataMemory:unit2|memory[3][0][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][3]~_emulated" and latch "DataMemory:unit2|memory[3][3][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][3]~_emulated" and latch "DataMemory:unit2|memory[5][2][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][3]~_emulated" and latch "DataMemory:unit2|memory[6][2][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][3]~_emulated" and latch "DataMemory:unit2|memory[4][2][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][3]~_emulated" and latch "DataMemory:unit2|memory[7][2][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][3]~_emulated" and latch "DataMemory:unit2|memory[6][1][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][3]~_emulated" and latch "DataMemory:unit2|memory[5][1][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][3]~_emulated" and latch "DataMemory:unit2|memory[4][1][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][3]~_emulated" and latch "DataMemory:unit2|memory[7][1][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][3]~_emulated" and latch "DataMemory:unit2|memory[5][0][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][3]~_emulated" and latch "DataMemory:unit2|memory[6][0][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][3]~_emulated" and latch "DataMemory:unit2|memory[4][0][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][3]~_emulated" and latch "DataMemory:unit2|memory[7][0][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][3]~_emulated" and latch "DataMemory:unit2|memory[6][3][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][3]~_emulated" and latch "DataMemory:unit2|memory[5][3][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][3]~_emulated" and latch "DataMemory:unit2|memory[4][3][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][3]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][3]~_emulated" and latch "DataMemory:unit2|memory[7][3][3]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][4]~_emulated" and latch "DataMemory:unit2|memory[1][2][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][4]~_emulated" and latch "DataMemory:unit2|memory[1][1][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][4]~_emulated" and latch "DataMemory:unit2|memory[1][0][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][4]~_emulated" and latch "DataMemory:unit2|memory[1][3][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][4]~_emulated" and latch "DataMemory:unit2|memory[2][1][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][4]~_emulated" and latch "DataMemory:unit2|memory[2][2][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][4]~_emulated" and latch "DataMemory:unit2|memory[2][0][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][4]~_emulated" and latch "DataMemory:unit2|memory[2][3][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][4]~_emulated" and latch "DataMemory:unit2|memory[0][1][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][4]~_emulated" and latch "DataMemory:unit2|memory[0][2][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][4]~_emulated" and latch "DataMemory:unit2|memory[0][0][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][4]~_emulated" and latch "DataMemory:unit2|memory[0][3][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][4]~_emulated" and latch "DataMemory:unit2|memory[3][2][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][4]~_emulated" and latch "DataMemory:unit2|memory[3][1][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][4]~_emulated" and latch "DataMemory:unit2|memory[3][0][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][4]~_emulated" and latch "DataMemory:unit2|memory[3][3][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][4]~_emulated" and latch "DataMemory:unit2|memory[5][1][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][4]~_emulated" and latch "DataMemory:unit2|memory[6][1][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][4]~_emulated" and latch "DataMemory:unit2|memory[4][1][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][4]~_emulated" and latch "DataMemory:unit2|memory[7][1][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][4]~_emulated" and latch "DataMemory:unit2|memory[6][2][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][4]~_emulated" and latch "DataMemory:unit2|memory[5][2][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][4]~_emulated" and latch "DataMemory:unit2|memory[4][2][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][4]~_emulated" and latch "DataMemory:unit2|memory[7][2][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][4]~_emulated" and latch "DataMemory:unit2|memory[6][0][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][4]~_emulated" and latch "DataMemory:unit2|memory[5][0][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][4]~_emulated" and latch "DataMemory:unit2|memory[4][0][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][4]~_emulated" and latch "DataMemory:unit2|memory[7][0][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][4]~_emulated" and latch "DataMemory:unit2|memory[5][3][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][4]~_emulated" and latch "DataMemory:unit2|memory[6][3][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][4]~_emulated" and latch "DataMemory:unit2|memory[4][3][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][4]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][4]~_emulated" and latch "DataMemory:unit2|memory[7][3][4]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][5]~_emulated" and latch "DataMemory:unit2|memory[2][2][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][5]~_emulated" and latch "DataMemory:unit2|memory[2][1][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][5]~_emulated" and latch "DataMemory:unit2|memory[2][0][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][5]~_emulated" and latch "DataMemory:unit2|memory[2][3][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][5]~_emulated" and latch "DataMemory:unit2|memory[1][1][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][5]~_emulated" and latch "DataMemory:unit2|memory[1][2][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][5]~_emulated" and latch "DataMemory:unit2|memory[1][0][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][5]~_emulated" and latch "DataMemory:unit2|memory[1][3][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][5]~_emulated" and latch "DataMemory:unit2|memory[0][2][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][5]~_emulated" and latch "DataMemory:unit2|memory[0][1][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][5]~_emulated" and latch "DataMemory:unit2|memory[0][0][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][5]~_emulated" and latch "DataMemory:unit2|memory[0][3][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][5]~_emulated" and latch "DataMemory:unit2|memory[3][1][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][5]~_emulated" and latch "DataMemory:unit2|memory[3][2][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][5]~_emulated" and latch "DataMemory:unit2|memory[3][0][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][5]~_emulated" and latch "DataMemory:unit2|memory[3][3][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][5]~_emulated" and latch "DataMemory:unit2|memory[5][2][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][5]~_emulated" and latch "DataMemory:unit2|memory[6][2][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][5]~_emulated" and latch "DataMemory:unit2|memory[4][2][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][5]~_emulated" and latch "DataMemory:unit2|memory[7][2][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][5]~_emulated" and latch "DataMemory:unit2|memory[6][1][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][5]~_emulated" and latch "DataMemory:unit2|memory[5][1][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][5]~_emulated" and latch "DataMemory:unit2|memory[4][1][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][5]~_emulated" and latch "DataMemory:unit2|memory[7][1][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][5]~_emulated" and latch "DataMemory:unit2|memory[5][0][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][5]~_emulated" and latch "DataMemory:unit2|memory[6][0][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][5]~_emulated" and latch "DataMemory:unit2|memory[4][0][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][5]~_emulated" and latch "DataMemory:unit2|memory[7][0][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][5]~_emulated" and latch "DataMemory:unit2|memory[6][3][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][5]~_emulated" and latch "DataMemory:unit2|memory[5][3][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][5]~_emulated" and latch "DataMemory:unit2|memory[4][3][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][5]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][5]~_emulated" and latch "DataMemory:unit2|memory[7][3][5]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][6]~_emulated" and latch "DataMemory:unit2|memory[1][2][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][6]~_emulated" and latch "DataMemory:unit2|memory[1][1][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][6]~_emulated" and latch "DataMemory:unit2|memory[1][0][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][6]~_emulated" and latch "DataMemory:unit2|memory[1][3][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][6]~_emulated" and latch "DataMemory:unit2|memory[2][1][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][6]~_emulated" and latch "DataMemory:unit2|memory[2][2][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][6]~_emulated" and latch "DataMemory:unit2|memory[2][0][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][6]~_emulated" and latch "DataMemory:unit2|memory[2][3][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][6]~_emulated" and latch "DataMemory:unit2|memory[0][1][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][6]~_emulated" and latch "DataMemory:unit2|memory[0][2][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][6]~_emulated" and latch "DataMemory:unit2|memory[0][0][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][6]~_emulated" and latch "DataMemory:unit2|memory[0][3][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][6]~_emulated" and latch "DataMemory:unit2|memory[3][2][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][6]~_emulated" and latch "DataMemory:unit2|memory[3][1][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][6]~_emulated" and latch "DataMemory:unit2|memory[3][0][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][6]~_emulated" and latch "DataMemory:unit2|memory[3][3][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][6]~_emulated" and latch "DataMemory:unit2|memory[5][1][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][6]~_emulated" and latch "DataMemory:unit2|memory[6][1][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][6]~_emulated" and latch "DataMemory:unit2|memory[4][1][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][6]~_emulated" and latch "DataMemory:unit2|memory[7][1][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][6]~_emulated" and latch "DataMemory:unit2|memory[6][2][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][6]~_emulated" and latch "DataMemory:unit2|memory[5][2][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][6]~_emulated" and latch "DataMemory:unit2|memory[4][2][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][6]~_emulated" and latch "DataMemory:unit2|memory[7][2][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][6]~_emulated" and latch "DataMemory:unit2|memory[6][0][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][6]~_emulated" and latch "DataMemory:unit2|memory[5][0][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][6]~_emulated" and latch "DataMemory:unit2|memory[4][0][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][6]~_emulated" and latch "DataMemory:unit2|memory[7][0][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][6]~_emulated" and latch "DataMemory:unit2|memory[5][3][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][6]~_emulated" and latch "DataMemory:unit2|memory[6][3][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][6]~_emulated" and latch "DataMemory:unit2|memory[4][3][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][6]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][6]~_emulated" and latch "DataMemory:unit2|memory[7][3][6]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][7]~_emulated" and latch "DataMemory:unit2|memory[2][2][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][7]~_emulated" and latch "DataMemory:unit2|memory[2][1][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][7]~_emulated" and latch "DataMemory:unit2|memory[2][0][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][7]~_emulated" and latch "DataMemory:unit2|memory[2][3][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][7]~_emulated" and latch "DataMemory:unit2|memory[1][1][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][7]~_emulated" and latch "DataMemory:unit2|memory[1][2][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][7]~_emulated" and latch "DataMemory:unit2|memory[1][0][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][7]~_emulated" and latch "DataMemory:unit2|memory[1][3][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][7]~_emulated" and latch "DataMemory:unit2|memory[0][2][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][7]~_emulated" and latch "DataMemory:unit2|memory[0][1][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][7]~_emulated" and latch "DataMemory:unit2|memory[0][0][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][7]~_emulated" and latch "DataMemory:unit2|memory[0][3][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][7]~_emulated" and latch "DataMemory:unit2|memory[3][1][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][7]~_emulated" and latch "DataMemory:unit2|memory[3][2][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][7]~_emulated" and latch "DataMemory:unit2|memory[3][0][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][7]~_emulated" and latch "DataMemory:unit2|memory[3][3][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][7]~_emulated" and latch "DataMemory:unit2|memory[5][2][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][7]~_emulated" and latch "DataMemory:unit2|memory[6][2][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][7]~_emulated" and latch "DataMemory:unit2|memory[4][2][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][7]~_emulated" and latch "DataMemory:unit2|memory[7][2][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][7]~_emulated" and latch "DataMemory:unit2|memory[6][1][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][7]~_emulated" and latch "DataMemory:unit2|memory[5][1][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][7]~_emulated" and latch "DataMemory:unit2|memory[4][1][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][7]~_emulated" and latch "DataMemory:unit2|memory[7][1][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][7]~_emulated" and latch "DataMemory:unit2|memory[5][0][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][7]~_emulated" and latch "DataMemory:unit2|memory[6][0][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][7]~_emulated" and latch "DataMemory:unit2|memory[4][0][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][7]~_emulated" and latch "DataMemory:unit2|memory[7][0][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][7]~_emulated" and latch "DataMemory:unit2|memory[6][3][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][7]~_emulated" and latch "DataMemory:unit2|memory[5][3][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][7]~_emulated" and latch "DataMemory:unit2|memory[4][3][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][7]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][7]~_emulated" and latch "DataMemory:unit2|memory[7][3][7]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][8]~_emulated" and latch "DataMemory:unit2|memory[1][2][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][8]~_emulated" and latch "DataMemory:unit2|memory[1][1][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][8]~_emulated" and latch "DataMemory:unit2|memory[1][0][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][8]~_emulated" and latch "DataMemory:unit2|memory[1][3][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][8]~_emulated" and latch "DataMemory:unit2|memory[2][1][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][8]~_emulated" and latch "DataMemory:unit2|memory[2][2][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][8]~_emulated" and latch "DataMemory:unit2|memory[2][0][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][8]~_emulated" and latch "DataMemory:unit2|memory[2][3][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][8]~_emulated" and latch "DataMemory:unit2|memory[0][1][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][8]~_emulated" and latch "DataMemory:unit2|memory[0][2][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][8]~_emulated" and latch "DataMemory:unit2|memory[0][0][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][8]~_emulated" and latch "DataMemory:unit2|memory[0][3][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][8]~_emulated" and latch "DataMemory:unit2|memory[3][2][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][8]~_emulated" and latch "DataMemory:unit2|memory[3][1][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][8]~_emulated" and latch "DataMemory:unit2|memory[3][0][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][8]~_emulated" and latch "DataMemory:unit2|memory[3][3][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][8]~_emulated" and latch "DataMemory:unit2|memory[5][1][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][8]~_emulated" and latch "DataMemory:unit2|memory[6][1][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][8]~_emulated" and latch "DataMemory:unit2|memory[4][1][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][8]~_emulated" and latch "DataMemory:unit2|memory[7][1][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][8]~_emulated" and latch "DataMemory:unit2|memory[6][2][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][8]~_emulated" and latch "DataMemory:unit2|memory[5][2][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][8]~_emulated" and latch "DataMemory:unit2|memory[4][2][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][8]~_emulated" and latch "DataMemory:unit2|memory[7][2][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][8]~_emulated" and latch "DataMemory:unit2|memory[6][0][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][8]~_emulated" and latch "DataMemory:unit2|memory[5][0][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][8]~_emulated" and latch "DataMemory:unit2|memory[4][0][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][8]~_emulated" and latch "DataMemory:unit2|memory[7][0][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][8]~_emulated" and latch "DataMemory:unit2|memory[5][3][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][8]~_emulated" and latch "DataMemory:unit2|memory[6][3][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][8]~_emulated" and latch "DataMemory:unit2|memory[4][3][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][8]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][8]~_emulated" and latch "DataMemory:unit2|memory[7][3][8]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][9]~_emulated" and latch "DataMemory:unit2|memory[2][2][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][9]~_emulated" and latch "DataMemory:unit2|memory[2][1][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][9]~_emulated" and latch "DataMemory:unit2|memory[2][0][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][9]~_emulated" and latch "DataMemory:unit2|memory[2][3][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][9]~_emulated" and latch "DataMemory:unit2|memory[1][1][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][9]~_emulated" and latch "DataMemory:unit2|memory[1][2][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][9]~_emulated" and latch "DataMemory:unit2|memory[1][0][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][9]~_emulated" and latch "DataMemory:unit2|memory[1][3][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][9]~_emulated" and latch "DataMemory:unit2|memory[0][2][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][9]~_emulated" and latch "DataMemory:unit2|memory[0][1][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][9]~_emulated" and latch "DataMemory:unit2|memory[0][0][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][9]~_emulated" and latch "DataMemory:unit2|memory[0][3][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][9]~_emulated" and latch "DataMemory:unit2|memory[3][1][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][9]~_emulated" and latch "DataMemory:unit2|memory[3][2][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][9]~_emulated" and latch "DataMemory:unit2|memory[3][0][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][9]~_emulated" and latch "DataMemory:unit2|memory[3][3][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][9]~_emulated" and latch "DataMemory:unit2|memory[5][2][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][9]~_emulated" and latch "DataMemory:unit2|memory[6][2][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][9]~_emulated" and latch "DataMemory:unit2|memory[4][2][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][9]~_emulated" and latch "DataMemory:unit2|memory[7][2][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][9]~_emulated" and latch "DataMemory:unit2|memory[6][1][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][9]~_emulated" and latch "DataMemory:unit2|memory[5][1][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][9]~_emulated" and latch "DataMemory:unit2|memory[4][1][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][9]~_emulated" and latch "DataMemory:unit2|memory[7][1][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][9]~_emulated" and latch "DataMemory:unit2|memory[5][0][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][9]~_emulated" and latch "DataMemory:unit2|memory[6][0][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][9]~_emulated" and latch "DataMemory:unit2|memory[4][0][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][9]~_emulated" and latch "DataMemory:unit2|memory[7][0][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][9]~_emulated" and latch "DataMemory:unit2|memory[6][3][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][9]~_emulated" and latch "DataMemory:unit2|memory[5][3][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][9]~_emulated" and latch "DataMemory:unit2|memory[4][3][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][9]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][9]~_emulated" and latch "DataMemory:unit2|memory[7][3][9]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][10]~_emulated" and latch "DataMemory:unit2|memory[1][2][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][10]~_emulated" and latch "DataMemory:unit2|memory[1][1][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][10]~_emulated" and latch "DataMemory:unit2|memory[1][0][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][10]~_emulated" and latch "DataMemory:unit2|memory[1][3][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][10]~_emulated" and latch "DataMemory:unit2|memory[2][1][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][10]~_emulated" and latch "DataMemory:unit2|memory[2][2][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][10]~_emulated" and latch "DataMemory:unit2|memory[2][0][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][10]~_emulated" and latch "DataMemory:unit2|memory[2][3][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][10]~_emulated" and latch "DataMemory:unit2|memory[0][1][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][10]~_emulated" and latch "DataMemory:unit2|memory[0][2][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][10]~_emulated" and latch "DataMemory:unit2|memory[0][0][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][10]~_emulated" and latch "DataMemory:unit2|memory[0][3][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][10]~_emulated" and latch "DataMemory:unit2|memory[3][2][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][10]~_emulated" and latch "DataMemory:unit2|memory[3][1][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][10]~_emulated" and latch "DataMemory:unit2|memory[3][0][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][10]~_emulated" and latch "DataMemory:unit2|memory[3][3][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][10]~_emulated" and latch "DataMemory:unit2|memory[5][1][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][10]~_emulated" and latch "DataMemory:unit2|memory[6][1][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][10]~_emulated" and latch "DataMemory:unit2|memory[4][1][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][10]~_emulated" and latch "DataMemory:unit2|memory[7][1][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][10]~_emulated" and latch "DataMemory:unit2|memory[6][2][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][10]~_emulated" and latch "DataMemory:unit2|memory[5][2][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][10]~_emulated" and latch "DataMemory:unit2|memory[4][2][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][10]~_emulated" and latch "DataMemory:unit2|memory[7][2][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][10]~_emulated" and latch "DataMemory:unit2|memory[6][0][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][10]~_emulated" and latch "DataMemory:unit2|memory[5][0][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][10]~_emulated" and latch "DataMemory:unit2|memory[4][0][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][10]~_emulated" and latch "DataMemory:unit2|memory[7][0][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][10]~_emulated" and latch "DataMemory:unit2|memory[5][3][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][10]~_emulated" and latch "DataMemory:unit2|memory[6][3][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][10]~_emulated" and latch "DataMemory:unit2|memory[4][3][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][10]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][10]~_emulated" and latch "DataMemory:unit2|memory[7][3][10]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][11]~_emulated" and latch "DataMemory:unit2|memory[2][2][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][11]~_emulated" and latch "DataMemory:unit2|memory[2][1][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][11]~_emulated" and latch "DataMemory:unit2|memory[2][0][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][11]~_emulated" and latch "DataMemory:unit2|memory[2][3][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][11]~_emulated" and latch "DataMemory:unit2|memory[1][1][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][11]~_emulated" and latch "DataMemory:unit2|memory[1][2][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][11]~_emulated" and latch "DataMemory:unit2|memory[1][0][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][11]~_emulated" and latch "DataMemory:unit2|memory[1][3][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][11]~_emulated" and latch "DataMemory:unit2|memory[0][2][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][11]~_emulated" and latch "DataMemory:unit2|memory[0][1][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][11]~_emulated" and latch "DataMemory:unit2|memory[0][0][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][11]~_emulated" and latch "DataMemory:unit2|memory[0][3][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][11]~_emulated" and latch "DataMemory:unit2|memory[3][1][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][11]~_emulated" and latch "DataMemory:unit2|memory[3][2][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][11]~_emulated" and latch "DataMemory:unit2|memory[3][0][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][11]~_emulated" and latch "DataMemory:unit2|memory[3][3][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][11]~_emulated" and latch "DataMemory:unit2|memory[5][2][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][11]~_emulated" and latch "DataMemory:unit2|memory[6][2][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][11]~_emulated" and latch "DataMemory:unit2|memory[4][2][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][11]~_emulated" and latch "DataMemory:unit2|memory[7][2][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][11]~_emulated" and latch "DataMemory:unit2|memory[6][1][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][11]~_emulated" and latch "DataMemory:unit2|memory[5][1][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][11]~_emulated" and latch "DataMemory:unit2|memory[4][1][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][11]~_emulated" and latch "DataMemory:unit2|memory[7][1][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][11]~_emulated" and latch "DataMemory:unit2|memory[5][0][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][11]~_emulated" and latch "DataMemory:unit2|memory[6][0][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][11]~_emulated" and latch "DataMemory:unit2|memory[4][0][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][11]~_emulated" and latch "DataMemory:unit2|memory[7][0][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][11]~_emulated" and latch "DataMemory:unit2|memory[6][3][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][11]~_emulated" and latch "DataMemory:unit2|memory[5][3][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][11]~_emulated" and latch "DataMemory:unit2|memory[4][3][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][11]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][11]~_emulated" and latch "DataMemory:unit2|memory[7][3][11]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][12]~_emulated" and latch "DataMemory:unit2|memory[1][2][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][12]~_emulated" and latch "DataMemory:unit2|memory[1][1][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][12]~_emulated" and latch "DataMemory:unit2|memory[1][0][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][12]~_emulated" and latch "DataMemory:unit2|memory[1][3][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][12]~_emulated" and latch "DataMemory:unit2|memory[2][1][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][12]~_emulated" and latch "DataMemory:unit2|memory[2][2][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][12]~_emulated" and latch "DataMemory:unit2|memory[2][0][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][12]~_emulated" and latch "DataMemory:unit2|memory[2][3][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][12]~_emulated" and latch "DataMemory:unit2|memory[0][1][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][12]~_emulated" and latch "DataMemory:unit2|memory[0][2][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][12]~_emulated" and latch "DataMemory:unit2|memory[0][0][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][12]~_emulated" and latch "DataMemory:unit2|memory[0][3][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][12]~_emulated" and latch "DataMemory:unit2|memory[3][2][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][12]~_emulated" and latch "DataMemory:unit2|memory[3][1][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][12]~_emulated" and latch "DataMemory:unit2|memory[3][0][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][12]~_emulated" and latch "DataMemory:unit2|memory[3][3][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][12]~_emulated" and latch "DataMemory:unit2|memory[5][1][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][12]~_emulated" and latch "DataMemory:unit2|memory[6][1][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][12]~_emulated" and latch "DataMemory:unit2|memory[4][1][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][12]~_emulated" and latch "DataMemory:unit2|memory[7][1][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][12]~_emulated" and latch "DataMemory:unit2|memory[6][2][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][12]~_emulated" and latch "DataMemory:unit2|memory[5][2][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][12]~_emulated" and latch "DataMemory:unit2|memory[4][2][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][12]~_emulated" and latch "DataMemory:unit2|memory[7][2][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][12]~_emulated" and latch "DataMemory:unit2|memory[6][0][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][12]~_emulated" and latch "DataMemory:unit2|memory[5][0][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][12]~_emulated" and latch "DataMemory:unit2|memory[4][0][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][12]~_emulated" and latch "DataMemory:unit2|memory[7][0][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][12]~_emulated" and latch "DataMemory:unit2|memory[5][3][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][12]~_emulated" and latch "DataMemory:unit2|memory[6][3][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][12]~_emulated" and latch "DataMemory:unit2|memory[4][3][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][12]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][12]~_emulated" and latch "DataMemory:unit2|memory[7][3][12]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][13]~_emulated" and latch "DataMemory:unit2|memory[2][2][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][13]~_emulated" and latch "DataMemory:unit2|memory[2][1][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][13]~_emulated" and latch "DataMemory:unit2|memory[2][0][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][13]~_emulated" and latch "DataMemory:unit2|memory[2][3][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][13]~_emulated" and latch "DataMemory:unit2|memory[1][1][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][13]~_emulated" and latch "DataMemory:unit2|memory[1][2][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][13]~_emulated" and latch "DataMemory:unit2|memory[1][0][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][13]~_emulated" and latch "DataMemory:unit2|memory[1][3][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][13]~_emulated" and latch "DataMemory:unit2|memory[0][2][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][13]~_emulated" and latch "DataMemory:unit2|memory[0][1][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][13]~_emulated" and latch "DataMemory:unit2|memory[0][0][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][13]~_emulated" and latch "DataMemory:unit2|memory[0][3][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][13]~_emulated" and latch "DataMemory:unit2|memory[3][1][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][13]~_emulated" and latch "DataMemory:unit2|memory[3][2][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][13]~_emulated" and latch "DataMemory:unit2|memory[3][0][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][13]~_emulated" and latch "DataMemory:unit2|memory[3][3][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][13]~_emulated" and latch "DataMemory:unit2|memory[5][2][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][13]~_emulated" and latch "DataMemory:unit2|memory[6][2][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][13]~_emulated" and latch "DataMemory:unit2|memory[4][2][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][13]~_emulated" and latch "DataMemory:unit2|memory[7][2][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][13]~_emulated" and latch "DataMemory:unit2|memory[6][1][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][13]~_emulated" and latch "DataMemory:unit2|memory[5][1][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][13]~_emulated" and latch "DataMemory:unit2|memory[4][1][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][13]~_emulated" and latch "DataMemory:unit2|memory[7][1][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][13]~_emulated" and latch "DataMemory:unit2|memory[5][0][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][13]~_emulated" and latch "DataMemory:unit2|memory[6][0][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][13]~_emulated" and latch "DataMemory:unit2|memory[4][0][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][13]~_emulated" and latch "DataMemory:unit2|memory[7][0][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][13]~_emulated" and latch "DataMemory:unit2|memory[6][3][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][13]~_emulated" and latch "DataMemory:unit2|memory[5][3][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][13]~_emulated" and latch "DataMemory:unit2|memory[4][3][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][13]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][13]~_emulated" and latch "DataMemory:unit2|memory[7][3][13]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][14]~_emulated" and latch "DataMemory:unit2|memory[1][2][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][14]~_emulated" and latch "DataMemory:unit2|memory[1][1][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][14]~_emulated" and latch "DataMemory:unit2|memory[1][0][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][14]~_emulated" and latch "DataMemory:unit2|memory[1][3][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][14]~_emulated" and latch "DataMemory:unit2|memory[2][1][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][14]~_emulated" and latch "DataMemory:unit2|memory[2][2][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][14]~_emulated" and latch "DataMemory:unit2|memory[2][0][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][14]~_emulated" and latch "DataMemory:unit2|memory[2][3][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][14]~_emulated" and latch "DataMemory:unit2|memory[0][1][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][14]~_emulated" and latch "DataMemory:unit2|memory[0][2][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][14]~_emulated" and latch "DataMemory:unit2|memory[0][0][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][14]~_emulated" and latch "DataMemory:unit2|memory[0][3][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][14]~_emulated" and latch "DataMemory:unit2|memory[3][2][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][14]~_emulated" and latch "DataMemory:unit2|memory[3][1][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][14]~_emulated" and latch "DataMemory:unit2|memory[3][0][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][14]~_emulated" and latch "DataMemory:unit2|memory[3][3][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][14]~_emulated" and latch "DataMemory:unit2|memory[5][1][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][14]~_emulated" and latch "DataMemory:unit2|memory[6][1][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][14]~_emulated" and latch "DataMemory:unit2|memory[4][1][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][14]~_emulated" and latch "DataMemory:unit2|memory[7][1][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][14]~_emulated" and latch "DataMemory:unit2|memory[6][2][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][14]~_emulated" and latch "DataMemory:unit2|memory[5][2][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][14]~_emulated" and latch "DataMemory:unit2|memory[4][2][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][14]~_emulated" and latch "DataMemory:unit2|memory[7][2][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][14]~_emulated" and latch "DataMemory:unit2|memory[6][0][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][14]~_emulated" and latch "DataMemory:unit2|memory[5][0][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][14]~_emulated" and latch "DataMemory:unit2|memory[4][0][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][14]~_emulated" and latch "DataMemory:unit2|memory[7][0][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][14]~_emulated" and latch "DataMemory:unit2|memory[5][3][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][14]~_emulated" and latch "DataMemory:unit2|memory[6][3][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][14]~_emulated" and latch "DataMemory:unit2|memory[4][3][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][14]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][14]~_emulated" and latch "DataMemory:unit2|memory[7][3][14]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][2][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][15]~_emulated" and latch "DataMemory:unit2|memory[2][2][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][1][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][15]~_emulated" and latch "DataMemory:unit2|memory[2][1][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][0][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][15]~_emulated" and latch "DataMemory:unit2|memory[2][0][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[2][3][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][3][15]~_emulated" and latch "DataMemory:unit2|memory[2][3][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][1][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][1][15]~_emulated" and latch "DataMemory:unit2|memory[1][1][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][2][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][2][15]~_emulated" and latch "DataMemory:unit2|memory[1][2][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][0][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][0][15]~_emulated" and latch "DataMemory:unit2|memory[1][0][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[1][3][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[1][3][15]~_emulated" and latch "DataMemory:unit2|memory[1][3][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][2][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][2][15]~_emulated" and latch "DataMemory:unit2|memory[0][2][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][1][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][1][15]~_emulated" and latch "DataMemory:unit2|memory[0][1][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][0][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][0][15]~_emulated" and latch "DataMemory:unit2|memory[0][0][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[0][3][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[0][3][15]~_emulated" and latch "DataMemory:unit2|memory[0][3][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][1][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][1][15]~_emulated" and latch "DataMemory:unit2|memory[3][1][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][2][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][2][15]~_emulated" and latch "DataMemory:unit2|memory[3][2][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][0][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][0][15]~_emulated" and latch "DataMemory:unit2|memory[3][0][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[3][3][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[3][3][15]~_emulated" and latch "DataMemory:unit2|memory[3][3][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][2][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][2][15]~_emulated" and latch "DataMemory:unit2|memory[5][2][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][2][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][2][15]~_emulated" and latch "DataMemory:unit2|memory[6][2][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][2][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][2][15]~_emulated" and latch "DataMemory:unit2|memory[4][2][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][2][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][2][15]~_emulated" and latch "DataMemory:unit2|memory[7][2][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][1][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][1][15]~_emulated" and latch "DataMemory:unit2|memory[6][1][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][1][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][1][15]~_emulated" and latch "DataMemory:unit2|memory[5][1][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][1][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][1][15]~_emulated" and latch "DataMemory:unit2|memory[4][1][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][1][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][1][15]~_emulated" and latch "DataMemory:unit2|memory[7][1][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][0][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][0][15]~_emulated" and latch "DataMemory:unit2|memory[5][0][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][0][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][0][15]~_emulated" and latch "DataMemory:unit2|memory[6][0][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][0][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][0][15]~_emulated" and latch "DataMemory:unit2|memory[4][0][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][0][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][0][15]~_emulated" and latch "DataMemory:unit2|memory[7][0][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[6][3][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[6][3][15]~_emulated" and latch "DataMemory:unit2|memory[6][3][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[5][3][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[5][3][15]~_emulated" and latch "DataMemory:unit2|memory[5][3][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[4][3][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[4][3][15]~_emulated" and latch "DataMemory:unit2|memory[4][3][15]~1"
+    Warning (13310): Register "DataMemory:unit2|memory[7][3][15]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[7][3][15]~_emulated" and latch "DataMemory:unit2|memory[7][3][15]~1"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "write_block_d" is stuck at GND
     Warning (13410): Pin "tag_enable_d" is stuck at VCC
-    Warning (13410): Pin "blockReplaced_d" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 64 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 76 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "data_block_in[0]"
-    Warning (15610): No output dependent on input pin "data_block_in[1]"
-    Warning (15610): No output dependent on input pin "data_block_in[2]"
-    Warning (15610): No output dependent on input pin "data_block_in[3]"
-    Warning (15610): No output dependent on input pin "data_block_in[4]"
-    Warning (15610): No output dependent on input pin "data_block_in[5]"
-    Warning (15610): No output dependent on input pin "data_block_in[6]"
-    Warning (15610): No output dependent on input pin "data_block_in[7]"
-    Warning (15610): No output dependent on input pin "data_block_in[8]"
-    Warning (15610): No output dependent on input pin "data_block_in[9]"
-    Warning (15610): No output dependent on input pin "data_block_in[10]"
-    Warning (15610): No output dependent on input pin "data_block_in[11]"
-    Warning (15610): No output dependent on input pin "data_block_in[12]"
-    Warning (15610): No output dependent on input pin "data_block_in[13]"
-    Warning (15610): No output dependent on input pin "data_block_in[14]"
-    Warning (15610): No output dependent on input pin "data_block_in[15]"
-    Warning (15610): No output dependent on input pin "data_block_in[16]"
-    Warning (15610): No output dependent on input pin "data_block_in[17]"
-    Warning (15610): No output dependent on input pin "data_block_in[18]"
-    Warning (15610): No output dependent on input pin "data_block_in[19]"
-    Warning (15610): No output dependent on input pin "data_block_in[20]"
-    Warning (15610): No output dependent on input pin "data_block_in[21]"
-    Warning (15610): No output dependent on input pin "data_block_in[22]"
-    Warning (15610): No output dependent on input pin "data_block_in[23]"
-    Warning (15610): No output dependent on input pin "data_block_in[24]"
-    Warning (15610): No output dependent on input pin "data_block_in[25]"
-    Warning (15610): No output dependent on input pin "data_block_in[26]"
-    Warning (15610): No output dependent on input pin "data_block_in[27]"
-    Warning (15610): No output dependent on input pin "data_block_in[28]"
-    Warning (15610): No output dependent on input pin "data_block_in[29]"
-    Warning (15610): No output dependent on input pin "data_block_in[30]"
-    Warning (15610): No output dependent on input pin "data_block_in[31]"
-    Warning (15610): No output dependent on input pin "data_block_in[32]"
-    Warning (15610): No output dependent on input pin "data_block_in[33]"
-    Warning (15610): No output dependent on input pin "data_block_in[34]"
-    Warning (15610): No output dependent on input pin "data_block_in[35]"
-    Warning (15610): No output dependent on input pin "data_block_in[36]"
-    Warning (15610): No output dependent on input pin "data_block_in[37]"
-    Warning (15610): No output dependent on input pin "data_block_in[38]"
-    Warning (15610): No output dependent on input pin "data_block_in[39]"
-    Warning (15610): No output dependent on input pin "data_block_in[40]"
-    Warning (15610): No output dependent on input pin "data_block_in[41]"
-    Warning (15610): No output dependent on input pin "data_block_in[42]"
-    Warning (15610): No output dependent on input pin "data_block_in[43]"
-    Warning (15610): No output dependent on input pin "data_block_in[44]"
-    Warning (15610): No output dependent on input pin "data_block_in[45]"
-    Warning (15610): No output dependent on input pin "data_block_in[46]"
-    Warning (15610): No output dependent on input pin "data_block_in[47]"
-    Warning (15610): No output dependent on input pin "data_block_in[48]"
-    Warning (15610): No output dependent on input pin "data_block_in[49]"
-    Warning (15610): No output dependent on input pin "data_block_in[50]"
-    Warning (15610): No output dependent on input pin "data_block_in[51]"
-    Warning (15610): No output dependent on input pin "data_block_in[52]"
-    Warning (15610): No output dependent on input pin "data_block_in[53]"
-    Warning (15610): No output dependent on input pin "data_block_in[54]"
-    Warning (15610): No output dependent on input pin "data_block_in[55]"
-    Warning (15610): No output dependent on input pin "data_block_in[56]"
-    Warning (15610): No output dependent on input pin "data_block_in[57]"
-    Warning (15610): No output dependent on input pin "data_block_in[58]"
-    Warning (15610): No output dependent on input pin "data_block_in[59]"
-    Warning (15610): No output dependent on input pin "data_block_in[60]"
-    Warning (15610): No output dependent on input pin "data_block_in[61]"
-    Warning (15610): No output dependent on input pin "data_block_in[62]"
-    Warning (15610): No output dependent on input pin "data_block_in[63]"
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "address_block_in[0]"
     Warning (15610): No output dependent on input pin "address_block_in[1]"
     Warning (15610): No output dependent on input pin "address_block_in[2]"
@@ -424,14 +864,14 @@ Warning (21074): Design contains 76 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "address_block_in[9]"
     Warning (15610): No output dependent on input pin "address_block_in[10]"
     Warning (15610): No output dependent on input pin "address_block_in[11]"
-Info (21057): Implemented 1247 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 109 input pins
-    Info (21059): Implemented 83 output pins
-    Info (21061): Implemented 1055 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 82 warnings
-    Info: Peak virtual memory: 612 megabytes
-    Info: Processing ended: Sun Mar 20 01:53:44 2016
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+Info (21057): Implemented 3388 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 110 input pins
+    Info (21059): Implemented 88 output pins
+    Info (21061): Implemented 3190 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 531 warnings
+    Info: Peak virtual memory: 489 megabytes
+    Info: Processing ended: Sun Mar 20 17:21:08 2016
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 

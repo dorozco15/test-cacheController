@@ -31,7 +31,8 @@ port(	clock_en : in std_logic;
 end component;
 
 component CacheController is 
-port(		clock					: in std_logic;
+port(	clock_en          : in std_logic;	
+		clock					: in std_logic;
 		reset					: in std_LOGIC;
 		MreIn					:	in STD_LOGIC;
 		MweIn					:	in STD_LOGIC;
@@ -43,7 +44,9 @@ port(		clock					: in std_logic;
 		replaceStatusOut  :  out std_logic;
 		data_block_in     :  in std_logic_vector(63 downto 0);
 		address_block_in  :  in std_logic_vector(11 downto 0);
-		delayReq				: out std_logic);
+		delayReq				: out std_logic;
+		done_out				: out std_logic
+		);
 end component;
 
 end MP_lib;

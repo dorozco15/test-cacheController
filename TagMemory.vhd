@@ -9,7 +9,7 @@ port (
 	clock: in std_logic; 
 	reset: in std_logic;
 	tag_in: in std_logic_vector(6 downto 0);
-	hit : out std_logic; 
+	hit : out std_ulogic; 
 	line_in: in std_logic_vector(2 downto 0);
 	write_en  : in std_logic;
 	read_en : std_logic
@@ -50,8 +50,10 @@ line_check <= to_integer(unsigned(line_in));
 	end process;
 	read: process(clock, reset, read_en, clock_en)
 	begin
+	
 	if (clock_en ='1')then
 		if (rising_edge(clock)) then
+			hit <= 'Z';
 			if ((read_en = '1') and (write_en ='0')) then
 				if (memory(line_check) = tag_in) then 
 					hit <= '1';

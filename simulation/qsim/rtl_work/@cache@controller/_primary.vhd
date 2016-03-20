@@ -2,6 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity CacheController is
     port(
+        clock_en        : in     vl_logic;
         clock           : in     vl_logic;
         reset           : in     vl_logic;
         MreIn           : in     vl_logic;
@@ -15,6 +16,7 @@ entity CacheController is
         data_block_in   : in     vl_logic_vector(63 downto 0);
         address_block_in: in     vl_logic_vector(11 downto 0);
         delayReq        : out    vl_logic;
+        done_out        : out    vl_logic;
         read_data_d     : out    vl_logic;
         write_data_d    : out    vl_logic;
         write_tag_d     : out    vl_logic;
@@ -28,6 +30,7 @@ entity CacheController is
         hit_d           : out    vl_logic;
         tag_enable_d    : out    vl_logic;
         data_enable_d   : out    vl_logic;
-        blockReplaced_d : out    vl_logic
+        blockReplaced_d : out    vl_logic;
+        state_d         : out    vl_logic_vector(3 downto 0)
     );
 end CacheController;

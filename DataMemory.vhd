@@ -44,7 +44,7 @@ end process;
 			end loop;
 		end loop;
 	else 
-		if ((write_block ='1') and ((read_en = '0') and (write_en ='0'))) then 
+		if ((write_block ='1') ) then 
 					memory(line_check, 0) <= data_block(15 downto 0);
 					memory(line_check, 1) <= data_block(31 downto 16);
 					memory(line_check, 2) <= data_block(47 downto 32);

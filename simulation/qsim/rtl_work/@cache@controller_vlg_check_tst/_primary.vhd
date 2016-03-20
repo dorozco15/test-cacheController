@@ -7,11 +7,13 @@ entity CacheController_vlg_check_tst is
         data_enable_d   : in     vl_logic;
         data_out_cpu    : in     vl_logic_vector(15 downto 0);
         delayReq        : in     vl_logic;
+        done_out        : in     vl_logic;
         hit_d           : in     vl_logic;
         lineIndex_d     : in     vl_logic_vector(2 downto 0);
         read_data_d     : in     vl_logic;
         read_tag_d      : in     vl_logic;
         replaceStatusOut: in     vl_logic;
+        state_d         : in     vl_logic_vector(3 downto 0);
         tag_enable_d    : in     vl_logic;
         tagIndex_d      : in     vl_logic_vector(6 downto 0);
         tempDataIn_d    : in     vl_logic_vector(15 downto 0);
