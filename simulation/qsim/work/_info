@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\dorozco\Desktop\test-cacheController\simulation\qsim
+vCacheController
+Z1 INV6zmkSd?AdeFeIF443C@1
+Z2 VCGbfG9AN5@<_WCQ66Lj:Q1
+Z3 dC:\Users\dorozco\Desktop\test-cacheController\simulation\qsim
+Z4 w1458446655
+Z5 8CacheController.vo
+Z6 FCacheController.vo
+L0 32
+Z7 OV;L;10.1e;51
+r1
+31
+Z8 o-work work -O0
+Z9 n@cache@controller
+!i10b 1
+Z10 !s100 g;zd<=`fJA602:Q08cP3W1
+!s85 0
+Z11 !s108 1458446655.733000
+Z12 !s107 CacheController.vo|
+Z13 !s90 -work|work|CacheController.vo|
+!s101 -O0
+vCacheController_vlg_check_tst
+!i10b 1
+!s100 Ai]VFkXIcgmOAm_M@4L413
+IAe8_fbb1j;E=Zm_ajFZlT2
+VM;bSgzM0[5^McO4HdW31;3
+R3
+Z14 w1458446652
+Z15 8CacheController-Sim.vwf.vt
+Z16 FCacheController-Sim.vwf.vt
+L0 74
+R7
+r1
+!s85 0
+31
+Z17 !s108 1458446657.250000
+Z18 !s107 CacheController-Sim.vwf.vt|
+Z19 !s90 -work|work|CacheController-Sim.vwf.vt|
+!s101 -O0
+R8
+n@cache@controller_vlg_check_tst
+vCacheController_vlg_sample_tst
+!i10b 1
+!s100 YKPJT7n@>z^>hEE[RfKzB2
+IQH3<lmb`l6V`Hm9[WSoJF2
+V3^z1Y@:CBHb55Y>6Cg1B21
+R3
+R14
+R15
+R16
+L0 30
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R8
+n@cache@controller_vlg_sample_tst
+vCacheController_vlg_vec_tst
+!i10b 1
+!s100 DIW^>k;l@Ti4`Klief?R`2
+IST@KA<@go`LI?Sb>1:dzJ0
+Vj9W4XZj<:LV^Z?O>2m>>Y0
+R3
+R14
+R15
+R16
+L0 716
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R8
+n@cache@controller_vlg_vec_tst
