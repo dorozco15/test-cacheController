@@ -4,82 +4,82 @@ K3
 cModel Technology
 Z0 dC:\Users\dorozco\Desktop\test-cacheController\simulation\qsim
 vCacheController
-Z1 INV6zmkSd?AdeFeIF443C@1
-Z2 VCGbfG9AN5@<_WCQ66Lj:Q1
-Z3 dC:\Users\dorozco\Desktop\test-cacheController\simulation\qsim
-Z4 w1458446655
-Z5 8CacheController.vo
-Z6 FCacheController.vo
+Z1 !s100 g;zd<=`fJA602:Q08cP3W1
+Z2 INV6zmkSd?AdeFeIF443C@1
+Z3 VCGbfG9AN5@<_WCQ66Lj:Q1
+Z4 dC:\Users\dorozco\Desktop\test-cacheController\simulation\qsim
+Z5 w1458447092
+Z6 8CacheController.vo
+Z7 FCacheController.vo
 L0 32
-Z7 OV;L;10.1e;51
+Z8 OV;L;10.1e;51
 r1
 31
-Z8 o-work work -O0
-Z9 n@cache@controller
+Z9 !s90 -work|work|CacheController.vo|
+Z10 o-work work -O0
+Z11 n@cache@controller
 !i10b 1
-Z10 !s100 g;zd<=`fJA602:Q08cP3W1
 !s85 0
-Z11 !s108 1458446655.733000
-Z12 !s107 CacheController.vo|
-Z13 !s90 -work|work|CacheController.vo|
+Z12 !s108 1458447093.225000
+Z13 !s107 CacheController.vo|
 !s101 -O0
 vCacheController_vlg_check_tst
 !i10b 1
-!s100 Ai]VFkXIcgmOAm_M@4L413
-IAe8_fbb1j;E=Zm_ajFZlT2
-VM;bSgzM0[5^McO4HdW31;3
-R3
-Z14 w1458446652
-Z15 8CacheController-Sim.vwf.vt
-Z16 FCacheController-Sim.vwf.vt
+Z14 !s100 Ai]VFkXIcgmOAm_M@4L413
+Z15 IAe8_fbb1j;E=Zm_ajFZlT2
+Z16 VM;bSgzM0[5^McO4HdW31;3
+R4
+Z17 w1458447090
+Z18 8CacheController-Sim.vwf.vt
+Z19 FCacheController-Sim.vwf.vt
 L0 74
-R7
+R8
 r1
 !s85 0
 31
-Z17 !s108 1458446657.250000
-Z18 !s107 CacheController-Sim.vwf.vt|
-Z19 !s90 -work|work|CacheController-Sim.vwf.vt|
+Z20 !s108 1458447093.987000
+Z21 !s107 CacheController-Sim.vwf.vt|
+Z22 !s90 -work|work|CacheController-Sim.vwf.vt|
 !s101 -O0
-R8
-n@cache@controller_vlg_check_tst
+R10
+Z23 n@cache@controller_vlg_check_tst
 vCacheController_vlg_sample_tst
 !i10b 1
-!s100 YKPJT7n@>z^>hEE[RfKzB2
-IQH3<lmb`l6V`Hm9[WSoJF2
-V3^z1Y@:CBHb55Y>6Cg1B21
-R3
-R14
-R15
-R16
-L0 30
-R7
-r1
-!s85 0
-31
+Z24 !s100 YKPJT7n@>z^>hEE[RfKzB2
+Z25 IQH3<lmb`l6V`Hm9[WSoJF2
+Z26 V3^z1Y@:CBHb55Y>6Cg1B21
+R4
 R17
 R18
 R19
-!s101 -O0
+L0 30
 R8
-n@cache@controller_vlg_sample_tst
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@cache@controller_vlg_sample_tst
 vCacheController_vlg_vec_tst
 !i10b 1
-!s100 DIW^>k;l@Ti4`Klief?R`2
-IST@KA<@go`LI?Sb>1:dzJ0
-Vj9W4XZj<:LV^Z?O>2m>>Y0
-R3
-R14
-R15
-R16
-L0 716
-R7
-r1
-!s85 0
-31
+Z28 !s100 IMQ_Tz[o=_fPSP?<GYmJo2
+Z29 II0j4_RXIkJKT8RfU_WP=:1
+Z30 Vj9W4XZj<:LV^Z?O>2m>>Y0
+R4
 R17
 R18
 R19
-!s101 -O0
+Z31 L0 716
 R8
-n@cache@controller_vlg_vec_tst
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 n@cache@controller_vlg_vec_tst

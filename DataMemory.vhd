@@ -35,7 +35,7 @@ begin
 line_check <= to_integer(unsigned(line_in));
 word_check <= to_integer(unsigned (word_in));
 end process;
-	   write1: process(clock, reset, clock_en, write_block, write_en, read_en, line_check, word_check)
+	   write1: process(clock, reset, clock_en, write_block, write_en, read_en, line_check, word_check, data_block)
 	begin 
 	if (reset = '1') then 
 		for i in 0 to 7 loop 

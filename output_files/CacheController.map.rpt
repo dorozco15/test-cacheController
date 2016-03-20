@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CacheController
-Sun Mar 20 00:56:19 2016
+Sun Mar 20 01:53:44 2016
 Quartus II 64-Bit Version 14.0.2 Build 209 09/17/2014 SJ Full Version
 
 
@@ -46,16 +46,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 20 00:56:19 2016       ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 20 01:53:44 2016       ;
 ; Quartus II 64-Bit Version          ; 14.0.2 Build 209 09/17/2014 SJ Full Version ;
 ; Revision Name                      ; CacheController                             ;
 ; Top-level Entity Name              ; CacheController                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,061                                       ;
-;     Total combinational functions  ; 447                                         ;
-;     Dedicated logic registers      ; 645                                         ;
-; Total registers                    ; 645                                         ;
-; Total pins                         ; 139                                         ;
+; Total logic elements               ; 1,055                                       ;
+;     Total combinational functions  ; 441                                         ;
+;     Dedicated logic registers      ; 643                                         ;
+; Total registers                    ; 643                                         ;
+; Total pins                         ; 192                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -184,28 +184,28 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,061       ;
+; Estimated Total logic elements              ; 1,055       ;
 ;                                             ;             ;
-; Total combinational functions               ; 447         ;
+; Total combinational functions               ; 441         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 411         ;
-;     -- 3 input functions                    ; 24          ;
-;     -- <=2 input functions                  ; 12          ;
+;     -- 4 input functions                    ; 409         ;
+;     -- 3 input functions                    ; 22          ;
+;     -- <=2 input functions                  ; 10          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 447         ;
+;     -- normal mode                          ; 441         ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
-; Total registers                             ; 645         ;
-;     -- Dedicated logic registers            ; 645         ;
+; Total registers                             ; 643         ;
+;     -- Dedicated logic registers            ; 643         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 139         ;
+; I/O pins                                    ; 192         ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 645         ;
-; Total fan-out                               ; 4411        ;
-; Average fan-out                             ; 3.22        ;
+; Maximum fan-out                             ; 643         ;
+; Total fan-out                               ; 4490        ;
+; Average fan-out                             ; 3.06        ;
 +---------------------------------------------+-------------+
 
 
@@ -214,8 +214,8 @@ agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
-; |CacheController           ; 447 (22)          ; 645 (60)     ; 0           ; 0            ; 0       ; 0         ; 139  ; 0            ; |CacheController                  ; work         ;
-;    |DataMemory:unit2|      ; 377 (377)         ; 528 (528)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CacheController|DataMemory:unit2 ; work         ;
+; |CacheController           ; 441 (18)          ; 643 (58)     ; 0           ; 0            ; 0       ; 0         ; 192  ; 0            ; |CacheController                  ; work         ;
+;    |DataMemory:unit2|      ; 375 (375)         ; 528 (528)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CacheController|DataMemory:unit2 ; work         ;
 ;    |TagMemory:unit1|       ; 48 (48)           ; 57 (57)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CacheController|TagMemory:unit1  ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -258,12 +258,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 645   ;
+; Total registers                              ; 643   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 580   ;
+; Number of registers using Asynchronous Clear ; 581   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 632   ;
+; Number of registers using Clock Enable       ; 629   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -273,10 +273,9 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |CacheController|write_data                   ;
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; Yes        ; |CacheController|DataMemory:unit2|data_out[2] ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; Yes        ; |CacheController|DataMemory:unit2|data_out[8] ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |CacheController|TagMemory:unit1|Mux0         ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CacheController|state                        ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |CacheController|TagMemory:unit1|Mux6         ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |CacheController|Selector7                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
@@ -286,17 +285,18 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 139                         ;
-; cycloneiii_ff         ; 645                         ;
-;     CLR               ; 12                          ;
-;     ENA               ; 64                          ;
+; boundary_port         ; 192                         ;
+; cycloneiii_ff         ; 643                         ;
+;     CLR               ; 13                          ;
+;     ENA               ; 61                          ;
 ;     ENA CLR           ; 568                         ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 447                         ;
-;     normal            ; 447                         ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 24                          ;
-;         4 data inputs ; 411                         ;
+; cycloneiii_lcell_comb ; 443                         ;
+;     normal            ; 443                         ;
+;         0 data inputs ; 2                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 22                          ;
+;         4 data inputs ; 409                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
 ; Average LUT depth     ; 3.82                        ;
@@ -318,7 +318,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.2 Build 209 09/17/2014 SJ Full Version
-    Info: Processing started: Sun Mar 20 00:56:15 2016
+    Info: Processing started: Sun Mar 20 01:53:40 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CacheController -c CacheController
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tagmemory.vhd
@@ -336,13 +336,13 @@ Info (12021): Found 2 design units, including 0 entities, in source file mp_lib.
 Info (12127): Elaborating entity "CacheController" for the top level hierarchy
 Info (12128): Elaborating entity "TagMemory" for hierarchy "TagMemory:unit1"
 Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:unit2"
-Warning (10492): VHDL Process Statement warning at DataMemory.vhd(48): signal "data_block" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at DataMemory.vhd(49): signal "data_block" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at DataMemory.vhd(50): signal "data_block" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at DataMemory.vhd(51): signal "data_block" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10631): VHDL Process Statement warning at DataMemory.vhd(38): inferring latch(es) for signal or variable "blockReplaced", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "blockReplaced" at DataMemory.vhd(38)
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "memory" into its bus
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "write_block_d" is stuck at GND
+    Warning (13410): Pin "tag_enable_d" is stuck at VCC
+    Warning (13410): Pin "blockReplaced_d" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 64 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -424,13 +424,13 @@ Warning (21074): Design contains 76 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "address_block_in[9]"
     Warning (15610): No output dependent on input pin "address_block_in[10]"
     Warning (15610): No output dependent on input pin "address_block_in[11]"
-Info (21057): Implemented 1200 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1247 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 109 input pins
-    Info (21059): Implemented 30 output pins
-    Info (21061): Implemented 1061 logic cells
+    Info (21059): Implemented 83 output pins
+    Info (21061): Implemented 1055 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 82 warnings
-    Info: Peak virtual memory: 613 megabytes
-    Info: Processing ended: Sun Mar 20 00:56:19 2016
+    Info: Peak virtual memory: 612 megabytes
+    Info: Processing ended: Sun Mar 20 01:53:44 2016
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
