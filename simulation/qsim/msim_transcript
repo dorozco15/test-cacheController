@@ -50,3 +50,44 @@
 # -- Compiling entity CacheController
 # -- Compiling architecture behav of CacheController
 # 
+vsim work.cachecontroller
+# vsim work.cachecontroller 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.mp_lib(body)
+# Loading work.cachecontroller(behav)
+# Loading work.tagmemory(behav)
+# Loading work.datamemory(behav)
+add wave -position insertpoint  \
+sim:/cachecontroller/clock_en \
+sim:/cachecontroller/clock \
+sim:/cachecontroller/reset \
+sim:/cachecontroller/MreIn \
+sim:/cachecontroller/MweIn \
+sim:/cachecontroller/addressIN \
+sim:/cachecontroller/addressOUT \
+sim:/cachecontroller/data_in \
+sim:/cachecontroller/data_out_cpu \
+sim:/cachecontroller/replaceStatusIn \
+sim:/cachecontroller/replaceStatusOut \
+sim:/cachecontroller/data_block_in \
+sim:/cachecontroller/address_block_in \
+sim:/cachecontroller/delayReq \
+sim:/cachecontroller/read_data_d \
+sim:/cachecontroller/write_data_d \
+sim:/cachecontroller/write_tag_d \
+sim:/cachecontroller/read_tag_d \
+sim:/cachecontroller/write_block_d \
+sim:/cachecontroller/tempDataIn_d \
+sim:/cachecontroller/tempDataOut_d \
+sim:/cachecontroller/tagIndex_d \
+sim:/cachecontroller/lineIndex_d \
+sim:/cachecontroller/wordIndex_d \
+sim:/cachecontroller/hit_d \
+sim:/cachecontroller/tag_enable_d \
+sim:/cachecontroller/data_enable_d \
+sim:/cachecontroller/blockReplaced_d \
+sim:/cachecontroller/state_d

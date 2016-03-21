@@ -1,6 +1,6 @@
 Analysis & Synthesis report for CacheController
-Sun Mar 20 17:21:08 2016
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+Mon Mar 21 17:56:20 2016
+Quartus II 64-Bit Version 14.0.2 Build 209 09/17/2014 SJ Full Version
 
 
 ---------------------
@@ -18,48 +18,50 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
  10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2013 Altera Corporation
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                          ;
-+------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 20 17:21:08 2016            ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
-; Revision Name                      ; CacheController                                  ;
-; Top-level Entity Name              ; CacheController                                  ;
-; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 3,190                                            ;
-;     Total combinational functions  ; 3,026                                            ;
-;     Dedicated logic registers      ; 718                                              ;
-; Total registers                    ; 718                                              ;
-; Total pins                         ; 198                                              ;
-; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 0                                                ;
-; Embedded Multiplier 9-bit elements ; 0                                                ;
-; Total PLLs                         ; 0                                                ;
-+------------------------------------+--------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Mar 21 17:56:20 2016       ;
+; Quartus II 64-Bit Version          ; 14.0.2 Build 209 09/17/2014 SJ Full Version ;
+; Revision Name                      ; CacheController                             ;
+; Top-level Entity Name              ; CacheController                             ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 3,188                                       ;
+;     Total combinational functions  ; 3,036                                       ;
+;     Dedicated logic registers      ; 709                                         ;
+; Total registers                    ; 709                                         ;
+; Total pins                         ; 197                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -183,26 +185,26 @@ applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 3,190       ;
+; Estimated Total logic elements              ; 3,188       ;
 ;                                             ;             ;
-; Total combinational functions               ; 3026        ;
+; Total combinational functions               ; 3036        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 1398        ;
-;     -- 3 input functions                    ; 591         ;
-;     -- <=2 input functions                  ; 1037        ;
+;     -- 4 input functions                    ; 1402        ;
+;     -- 3 input functions                    ; 592         ;
+;     -- <=2 input functions                  ; 1042        ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 3026        ;
+;     -- normal mode                          ; 3036        ;
 ;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
-; Total registers                             ; 718         ;
-;     -- Dedicated logic registers            ; 718         ;
+; Total registers                             ; 709         ;
+;     -- Dedicated logic registers            ; 709         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 198         ;
+; I/O pins                                    ; 197         ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 1105        ;
+; Maximum fan-out                             ; 1109        ;
 ; Total fan-out                               ; 12452       ;
 ; Average fan-out                             ; 3.01        ;
 +---------------------------------------------+-------------+
@@ -213,7 +215,7 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
-; |CacheController           ; 3026 (37)         ; 718 (132)    ; 0           ; 0            ; 0       ; 0         ; 198  ; 0            ; |CacheController                  ; work         ;
+; |CacheController           ; 3036 (47)         ; 709 (123)    ; 0           ; 0            ; 0       ; 0         ; 197  ; 0            ; |CacheController                  ; work         ;
 ;    |DataMemory:unit2|      ; 2942 (2942)       ; 528 (528)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CacheController|DataMemory:unit2 ; work         ;
 ;    |TagMemory:unit1|       ; 47 (47)           ; 58 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CacheController|TagMemory:unit1  ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
@@ -272,12 +274,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 718   ;
+; Total registers                              ; 709   ;
 ; Number of registers using Synchronous Clear  ; 3     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 585   ;
+; Number of registers using Asynchronous Clear ; 586   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 703   ;
+; Number of registers using Clock Enable       ; 694   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -287,7 +289,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; Yes        ; |CacheController|DataMemory:unit2|data_out[2] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |CacheController|read_data                    ;
+; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; Yes        ; |CacheController|DataMemory:unit2|data_out[8] ;
 ; 8:1                ; 7 bits    ; 35 LEs        ; 35 LEs               ; 0 LEs                  ; No         ; |CacheController|TagMemory:unit1|Mux0         ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |CacheController|state                        ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |CacheController|state                        ;
@@ -295,12 +298,38 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 197                         ;
+; cycloneiii_ff         ; 709                         ;
+;     CLR               ; 10                          ;
+;     CLR SCLR          ; 3                           ;
+;     ENA               ; 121                         ;
+;     ENA CLR           ; 573                         ;
+;     plain             ; 2                           ;
+; cycloneiii_io_obuf    ; 1                           ;
+; cycloneiii_lcell_comb ; 3037                        ;
+;     normal            ; 3037                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 1041                        ;
+;         3 data inputs ; 592                         ;
+;         4 data inputs ; 1402                        ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.60                        ;
++-----------------------+-----------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -309,8 +338,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sun Mar 20 17:21:01 2016
+    Info: Version 14.0.2 Build 209 09/17/2014 SJ Full Version
+    Info: Processing started: Mon Mar 21 17:56:12 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CacheController -c CacheController
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file tagmemory.vhd
@@ -326,6 +355,9 @@ Info (12021): Found 2 design units, including 0 entities, in source file mp_lib.
     Info (12022): Found design unit 1: MP_lib
     Info (12022): Found design unit 2: MP_lib-body
 Info (12127): Elaborating entity "CacheController" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at CacheController.vhd(67): object "done" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at CacheController.vhd(108): signal "MreIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CacheController.vhd(109): signal "MweIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "TagMemory" for hierarchy "TagMemory:unit1"
 Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:unit2"
 Warning (10631): VHDL Process Statement warning at DataMemory.vhd(38): inferring latch(es) for signal or variable "blockReplaced", which holds its previous value in one or more paths through the process
@@ -334,6 +366,8 @@ Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "TagMemory:unit1|hit" to the node "Selector19" into an OR gate
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "read_var" is converted into an equivalent circuit using register "read_var~_emulated" and latch "read_var~1"
+    Warning (13310): Register "write_var" is converted into an equivalent circuit using register "write_var~_emulated" and latch "write_var~1"
     Warning (13310): Register "DataMemory:unit2|memory[2][2][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][2][0]~_emulated" and latch "DataMemory:unit2|memory[2][2][0]~1"
     Warning (13310): Register "DataMemory:unit2|memory[2][1][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][1][0]~_emulated" and latch "DataMemory:unit2|memory[2][1][0]~1"
     Warning (13310): Register "DataMemory:unit2|memory[2][0][0]" is converted into an equivalent circuit using register "DataMemory:unit2|memory[2][0][0]~_emulated" and latch "DataMemory:unit2|memory[2][0][0]~1"
@@ -864,14 +898,14 @@ Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "address_block_in[9]"
     Warning (15610): No output dependent on input pin "address_block_in[10]"
     Warning (15610): No output dependent on input pin "address_block_in[11]"
-Info (21057): Implemented 3388 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3386 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 110 input pins
-    Info (21059): Implemented 88 output pins
-    Info (21061): Implemented 3190 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 531 warnings
-    Info: Peak virtual memory: 489 megabytes
-    Info: Processing ended: Sun Mar 20 17:21:08 2016
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info (21059): Implemented 87 output pins
+    Info (21061): Implemented 3189 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 536 warnings
+    Info: Peak virtual memory: 600 megabytes
+    Info: Processing ended: Mon Mar 21 17:56:20 2016
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 
