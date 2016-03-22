@@ -15,15 +15,15 @@ Z8 8C:/Users/dorozco/Desktop/test-cacheController/CacheController.vhd
 Z9 FC:/Users/dorozco/Desktop/test-cacheController/CacheController.vhd
 l0
 L6
-VR@ic95WUSh<O@_E>U4_iE3
-Z10 OV;C;10.1e;51
+Z10 VR@ic95WUSh<O@_E>U4_iE3
+Z11 OV;C;10.1e;51
 31
-Z11 !s108 1458448224.697000
-Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/dorozco/Desktop/test-cacheController/CacheController.vhd|
-Z13 !s107 C:/Users/dorozco/Desktop/test-cacheController/CacheController.vhd|
-Z14 o-93 -work work -O0
-Z15 tExplicit 1
-!s100 o]S`imMJC9Ldn2K^ocC303
+Z12 !s108 1458448224.697000
+Z13 !s90 -reportprogress|300|-93|-work|work|C:/Users/dorozco/Desktop/test-cacheController/CacheController.vhd|
+Z14 !s107 C:/Users/dorozco/Desktop/test-cacheController/CacheController.vhd|
+Z15 o-93 -work work -O0
+Z16 tExplicit 1
+Z17 !s100 o]S`imMJC9Ldn2K^ocC303
 !i10b 1
 Abehav
 R2
@@ -31,120 +31,120 @@ R3
 R4
 R5
 R6
-DEx4 work 15 cachecontroller 0 22 R@ic95WUSh<O@_E>U4_iE3
+Z18 DEx4 work 15 cachecontroller 0 22 R@ic95WUSh<O@_E>U4_iE3
 l68
 L45
-V@I]lToX5l[jVW4hMVQ3FU0
-R10
-31
+Z19 V@I]lToX5l[jVW4hMVQ3FU0
 R11
+31
 R12
 R13
 R14
 R15
-!s100 BHBNIf4j@U];@b=>RgPWo3
+R16
+Z20 !s100 BHBNIf4j@U];@b=>RgPWo3
 !i10b 1
 vCacheController
-Ie1Y==TDJ3N:=h8iP@H=d;2
-Vn7dY4W4gDoz2]bF`=]VOb3
+Z21 I^a`NaAJ;oLN8Q?bXQT?M_2
+Z22 V3KQ]@V3o49TIUD;8Ve>]i1
 R7
-w1458505970
-Z16 8CacheController.vo
-Z17 FCacheController.vo
-L0 31
-Z18 OV;L;10.1d;51
+Z23 w1458680377
+Z24 8CacheController.vo
+Z25 FCacheController.vo
+L0 32
+Z26 OV;L;10.1e;51
 r1
 31
-Z19 !s90 -work|work|CacheController.vo|
-Z20 o-work work -O0
-Z21 n@cache@controller
+Z27 !s90 -work|work|CacheController.vo|
+Z28 o-work work -O0
+Z29 n@cache@controller
 !i10b 1
-!s100 kP[5UIWjVc6M[8DmA3^mM3
+Z30 !s100 eUh=ec^zUFXhAkn1=D<LQ0
 !s85 0
-!s108 1458505971.591000
-Z22 !s107 CacheController.vo|
+Z31 !s108 1458680377.691000
+Z32 !s107 CacheController.vo|
 !s101 -O0
 vCacheController_vlg_check_tst
 !i10b 1
-!s100 _XlfmAm?N_lEoNYQ:97<[2
-IOH<75:ga4EVH[8@Cn`S@;3
-V[kLW_]:Bm8P@?XEbnSFGR3
+Z33 !s100 ]^8Xl3UM8O<49cFWjQhG11
+Z34 IC7GMz^XfUHh3zMlid]L:O3
+Z35 V3N2]iRCUHamzIFSULo=?>1
 R7
-Z23 w1458505969
-Z24 8CacheController.vt
-Z25 FCacheController.vt
-L0 75
-R18
+Z36 w1458680374
+Z37 8CacheController-Sim.vwf.vt
+Z38 FCacheController-Sim.vwf.vt
+L0 76
+R26
 r1
 !s85 0
 31
-Z26 !s108 1458505972.531000
-Z27 !s107 CacheController.vt|
-Z28 !s90 -work|work|CacheController.vt|
+Z39 !s108 1458680378.916000
+Z40 !s107 CacheController-Sim.vwf.vt|
+Z41 !s90 -work|work|CacheController-Sim.vwf.vt|
 !s101 -O0
-R20
-Z29 n@cache@controller_vlg_check_tst
+R28
+Z42 n@cache@controller_vlg_check_tst
 vCacheController_vlg_sample_tst
 !i10b 1
-!s100 CnglO7gLhU=``Q2iclBDJ3
-IclBJB7i0]]b`hl28DgXR03
-VKRW<8H[RAHX9ko8l?_g2G3
+Z43 !s100 ;Hif82CWFm7i7^VFMf2Z<3
+Z44 IizSEXMz>OnS=n93Y;E]Om3
+Z45 VKRW<8H[RAHX9ko8l?_g2G3
 R7
-R23
-R24
-R25
-L0 29
-R18
+R36
+R37
+R38
+L0 30
+R26
 r1
 !s85 0
 31
-R26
-R27
-R28
+R39
+R40
+R41
 !s101 -O0
-R20
-Z30 n@cache@controller_vlg_sample_tst
+R28
+Z46 n@cache@controller_vlg_sample_tst
 vCacheController_vlg_vec_tst
 !i10b 1
-!s100 VdnkUUUJ]X;lCj48?jRV73
-IWajJ;iUYS[]99`Vo1egVA2
-Z31 Vj9W4XZj<:LV^Z?O>2m>>Y0
+Z47 !s100 >HPPHYBaBH9]3N0^ezf3P0
+Z48 ILXf6^2bZAc90j?=c_bj4G3
+Z49 Vj9W4XZj<:LV^Z?O>2m>>Y0
 R7
-R23
-R24
-R25
-L0 1901
-R18
+R36
+R37
+R38
+Z50 L0 2269
+R26
 r1
 !s85 0
 31
-R26
-R27
-R28
+R39
+R40
+R41
 !s101 -O0
-R20
-Z32 n@cache@controller_vlg_vec_tst
+R28
+Z51 n@cache@controller_vlg_vec_tst
 Edatamemory
-Z33 w1458445987
+Z52 w1458445987
 R2
 R3
 R4
 R5
 R6
 R7
-Z34 8C:/Users/dorozco/Desktop/test-cacheController/DataMemory.vhd
-Z35 FC:/Users/dorozco/Desktop/test-cacheController/DataMemory.vhd
+Z53 8C:/Users/dorozco/Desktop/test-cacheController/DataMemory.vhd
+Z54 FC:/Users/dorozco/Desktop/test-cacheController/DataMemory.vhd
 l0
 L6
-Vgj9NcVTfHf^Mc0Zcf<:h60
-R10
+Z55 Vgj9NcVTfHf^Mc0Zcf<:h60
+R11
 31
-Z36 !s108 1458448224.356000
-Z37 !s90 -reportprogress|300|-93|-work|work|C:/Users/dorozco/Desktop/test-cacheController/DataMemory.vhd|
-Z38 !s107 C:/Users/dorozco/Desktop/test-cacheController/DataMemory.vhd|
-R14
+Z56 !s108 1458448224.356000
+Z57 !s90 -reportprogress|300|-93|-work|work|C:/Users/dorozco/Desktop/test-cacheController/DataMemory.vhd|
+Z58 !s107 C:/Users/dorozco/Desktop/test-cacheController/DataMemory.vhd|
 R15
-!s100 Z=>lHFb0i0>nkIR5hd9`b0
+R16
+Z59 !s100 Z=>lHFb0i0>nkIR5hd9`b0
 !i10b 1
 Abehav
 R2
@@ -152,38 +152,38 @@ R3
 R4
 R5
 R6
-DEx4 work 10 datamemory 0 22 gj9NcVTfHf^Mc0Zcf<:h60
+Z60 DEx4 work 10 datamemory 0 22 gj9NcVTfHf^Mc0Zcf<:h60
 l32
 L24
-VN>;kYM^8N=zH5BTaPGfSV0
-R10
+Z61 VN>;kYM^8N=zH5BTaPGfSV0
+R11
 31
-R36
-R37
-R38
-R14
+R56
+R57
+R58
 R15
-!s100 <@S]4G9?]nPnmDRc:jlQI1
+R16
+Z62 !s100 <@S]4G9?]nPnmDRc:jlQI1
 !i10b 1
 Pmp_lib
 R2
 R5
 R6
-Z39 w1458446064
+Z63 w1458446064
 R7
-Z40 8C:/Users/dorozco/Desktop/test-cacheController/MP_lib.vhd
-Z41 FC:/Users/dorozco/Desktop/test-cacheController/MP_lib.vhd
+Z64 8C:/Users/dorozco/Desktop/test-cacheController/MP_lib.vhd
+Z65 FC:/Users/dorozco/Desktop/test-cacheController/MP_lib.vhd
 l0
 L5
-VHLDNL9YZJL2;X0EibSXcj2
-R10
+Z66 VHLDNL9YZJL2;X0EibSXcj2
+R11
 31
-Z42 !s108 1458448223.413000
-Z43 !s90 -reportprogress|300|-93|-work|work|C:/Users/dorozco/Desktop/test-cacheController/MP_lib.vhd|
-Z44 !s107 C:/Users/dorozco/Desktop/test-cacheController/MP_lib.vhd|
-R14
+Z67 !s108 1458448223.413000
+Z68 !s90 -reportprogress|300|-93|-work|work|C:/Users/dorozco/Desktop/test-cacheController/MP_lib.vhd|
+Z69 !s107 C:/Users/dorozco/Desktop/test-cacheController/MP_lib.vhd|
 R15
-!s100 lL_8H>GjhQM;_YgTFYC1D0
+R16
+Z70 !s100 lL_8H>GjhQM;_YgTFYC1D0
 !i10b 1
 Bbody
 R3
@@ -192,38 +192,38 @@ R5
 R6
 l0
 L51
-VKFiSJo;bMI3XblH8NYR7:0
-R10
+Z71 VKFiSJo;bMI3XblH8NYR7:0
+R11
 31
-R42
-R43
-R44
-R14
+R67
+R68
+R69
 R15
+R16
 nbody
-!s100 2Y@<]1Fz@m8]2U<ggEc^N2
+Z72 !s100 2Y@<]1Fz@m8]2U<ggEc^N2
 !i10b 1
 Etagmemory
-Z45 w1458445986
+Z73 w1458445986
 R2
 R3
 R4
 R5
 R6
 R7
-Z46 8C:/Users/dorozco/Desktop/test-cacheController/TagMemory.vhd
-Z47 FC:/Users/dorozco/Desktop/test-cacheController/TagMemory.vhd
+Z74 8C:/Users/dorozco/Desktop/test-cacheController/TagMemory.vhd
+Z75 FC:/Users/dorozco/Desktop/test-cacheController/TagMemory.vhd
 l0
 L6
-Vg==Gk=ANX0fzl@I_MYhHR2
-R10
+Z76 Vg==Gk=ANX0fzl@I_MYhHR2
+R11
 31
-Z48 !s108 1458448223.932000
-Z49 !s90 -reportprogress|300|-93|-work|work|C:/Users/dorozco/Desktop/test-cacheController/TagMemory.vhd|
-Z50 !s107 C:/Users/dorozco/Desktop/test-cacheController/TagMemory.vhd|
-R14
+Z77 !s108 1458448223.932000
+Z78 !s90 -reportprogress|300|-93|-work|work|C:/Users/dorozco/Desktop/test-cacheController/TagMemory.vhd|
+Z79 !s107 C:/Users/dorozco/Desktop/test-cacheController/TagMemory.vhd|
 R15
-!s100 C@<0XEgankaKm^E9Rg_4d3
+R16
+Z80 !s100 C@<0XEgankaKm^E9Rg_4d3
 !i10b 1
 Abehav
 R2
@@ -231,16 +231,16 @@ R3
 R4
 R5
 R6
-DEx4 work 9 tagmemory 0 22 g==Gk=ANX0fzl@I_MYhHR2
+Z81 DEx4 work 9 tagmemory 0 22 g==Gk=ANX0fzl@I_MYhHR2
 l27
 L20
-VM4>BnRQDMP9a]iB:Q<PP`1
-R10
+Z82 VM4>BnRQDMP9a]iB:Q<PP`1
+R11
 31
-R48
-R49
-R50
-R14
+R77
+R78
+R79
 R15
-!s100 GeH[`S@g@b`_RJd4J0@Ue3
+R16
+Z83 !s100 GeH[`S@g@b`_RJd4J0@Ue3
 !i10b 1

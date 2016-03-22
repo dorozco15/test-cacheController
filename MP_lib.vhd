@@ -27,7 +27,10 @@ port(	clock_en : in std_logic;
 	word_in: in std_logic_vector(1 downto 0);
 	write_block: in std_logic;
 	blockReplaced: out std_logic;
-	data_block : in std_logic_vector(63 downto 0));
+	data_block : in std_logic_vector(63 downto 0);
+	send_block_out  : in std_logic ; 
+	data_block_out : out std_logic_vector (63 downto 0)
+	);
 end component;
 
 component CacheController is 
